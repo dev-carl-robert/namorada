@@ -16,7 +16,17 @@ h1 {
     color: #B9926F;
     font-size: 4rem;
     font-family: "cookie";
-
+    padding: 1rem;
+}
+button {
+    margin-top: 3rem;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
 }
 .image {
     display: flex;
@@ -25,6 +35,11 @@ h1 {
     align-items: center;
 }
 .image img{
+    height: 30rem;
+    width: 17rem;
+    
+}
+.image video {
     height: 30rem;
 }
 .coracao{

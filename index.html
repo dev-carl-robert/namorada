@@ -4,21 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
+        <audio id="musica">
+            <source src="./src/Best Part (feat. H.E.R.) - Daniel Caesar.mp3" type="audio/mpeg">
+        </audio>
+
+        <button onclick="tocar()">▶ Tocar</button>
         <h1>Feliz dia dos namorados</h1>
     </header>
     <div class="coracao">❤️</div>
     <div class="titulo"></div>
     <div class="image">
-        <img src="./src/1.jpg" alt="">
+        <video src="./src/video1.mp4" autoplayl mute loop alt="">
     </div>
     <div class="declaracao">
         <h1>Eu te amo incalculavelmente</h1>
@@ -27,43 +32,93 @@
         <img src="./src/1.jpg" alt="">
     </div>
     <div class="declaracao">
-        <h1>Eu te amo incalculavelmente</h1>
+        <h1>Eu te amo por toda vida</h1>
     </div>
     <div class="image">
-        <img src="./src/1.jpg" alt="">
+        <img src="./src/2.jpg" alt="">
     </div>
     <div class="declaracao">
-        <h1>Eu te amo incalculavelmente</h1>
+        <h1> 6 meses que eu te amo cada vez mais </h1>
     </div>
     <div class="image">
-        <img src="./src/1.jpg" alt="">
+        <img src="./src/3.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1> nossa primeira foto </h1>
+    </div>
+    <div class="image">
+        <img src="./src/4.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1> nosso primeiro date </h1>
+    </div>
+    <div class="image">
+        <img src="./src/5.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1> nosso primeiro natal </h1>
+    </div>
+    <div class="image">
+        <img src="./src/6.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1> nosso primeiro ano novo </h1>
+    </div>
+    <div class="image">
+        <img src="./src/7.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1> nossa primeira viagem </h1>
+    </div>
+    <div class="image">
+        <img src="./src/8.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1> minha princesa</h1>
+    </div>
+    <div class="image">
+        <img src="./src/9.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1> minha mulher </h1>
+    </div>
+    <div class="image">
+        <img src="./src/10.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1> primeiro boleto da nossa casa </h1>
     </div>
 </body>
 <script>
-function criarCoracao() {
-    const coracao = document.createElement("div");
+    function criarCoracao() {
+        const coracao = document.createElement("div");
 
-    coracao.innerHTML = "❤️";
-    coracao.classList.add("coracao");
+        coracao.innerHTML = "❤️";
+        coracao.classList.add("coracao");
 
-    coracao.style.left = Math.random() * window.innerWidth + "px";
-    coracao.style.fontSize = (Math.random() * 15 + 15) + "px";
-    coracao.style.animationDuration = (Math.random() * 5 + 10) + "s";
+        coracao.style.left = Math.random() * window.innerWidth + "px";
+        coracao.style.fontSize = (Math.random() * 15 + 15) + "px";
+        coracao.style.animationDuration = (Math.random() * 5 + 10) + "s";
 
-    document.body.appendChild(coracao);
+        document.body.appendChild(coracao);
 
+        setTimeout(() => {
+            coracao.remove();
+        }, 15000);
+    }
+
+    // Cria um coração a cada 800ms
+    const chuvaCoracoes = setInterval(criarCoracao, 800);
+
+    // Para após 15 segundos
     setTimeout(() => {
-        coracao.remove();
+        clearInterval(chuvaCoracoes);
     }, 15000);
-}
+    const musica = document.getElementById("musica");
 
-// Cria um coração a cada 800ms
-const chuvaCoracoes = setInterval(criarCoracao, 800);
-
-// Para após 15 segundos
-setTimeout(() => {
-    clearInterval(chuvaCoracoes);
-}, 15000);
-
+    function tocar() {
+        musica.paused ? musica.play() : musica.pause();
+    }
 </script>
+
 </html>
