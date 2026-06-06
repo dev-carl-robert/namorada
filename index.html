@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Feliz dia dos namorados</h1>
+    </header>
+    <div class="coracao">❤️</div>
+    <div class="titulo"></div>
+    <div class="image">
+        <img src="./src/1.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1>Eu te amo incalculavelmente</h1>
+    </div>
+    <div class="image">
+        <img src="./src/1.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1>Eu te amo incalculavelmente</h1>
+    </div>
+    <div class="image">
+        <img src="./src/1.jpg" alt="">
+    </div>
+    <div class="declaracao">
+        <h1>Eu te amo incalculavelmente</h1>
+    </div>
+    <div class="image">
+        <img src="./src/1.jpg" alt="">
+    </div>
+</body>
+<script>
+function criarCoracao() {
+    const coracao = document.createElement("div");
+
+    coracao.innerHTML = "❤️";
+    coracao.classList.add("coracao");
+
+    coracao.style.left = Math.random() * window.innerWidth + "px";
+    coracao.style.fontSize = (Math.random() * 15 + 15) + "px";
+    coracao.style.animationDuration = (Math.random() * 5 + 10) + "s";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 15000);
+}
+
+// Cria um coração a cada 800ms
+const chuvaCoracoes = setInterval(criarCoracao, 800);
+
+// Para após 15 segundos
+setTimeout(() => {
+    clearInterval(chuvaCoracoes);
+}, 15000);
+
+</script>
+</html>
