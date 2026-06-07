@@ -67,3 +67,11 @@ button {
         opacity: 0.8;
     }
 }
+.final h1 {
+    /* font-family: 'Sniglet'; */
+    font-size: 4rem;
+    color: #B9926F;
+}
+.print img {
+    min-width: 70rem;
+}
